@@ -27,7 +27,16 @@ If you have docker installed you can run it locally and make sure a basic run su
 
 ```bash
 > docker run --user 0 --entrypoint /bin/bash -it --rm elatov/awx-custom-ee:0.0.4  
-bash-4.4# git clone git@github.com:elatov/ansible-tower-samples.git
+bash-4.4# git clone https://github.com/elatov/ansible-tower-samples.git
+bash-4.4# cd ansible-tower-samples
+bash-4.4# ansible-playbook -vvv hello_world.yml
+```
+
+Or if you have `podman`:
+
+```bash
+> podman run --user 0 --entrypoint /bin/bash -it --rm elatov/awx-custom-ee:0.0.4  
+bash-4.4# git clone https://github.com/elatov/ansible-tower-samples.git
 bash-4.4# cd ansible-tower-samples
 bash-4.4# ansible-playbook -vvv hello_world.yml
 ```
@@ -36,7 +45,10 @@ bash-4.4# ansible-playbook -vvv hello_world.yml
 If all is well push the image:
 
 ```bash
+## docker
 > docker push elatov/awx-custom-ee:0.0.4
+## podman
+> podman push elatov/awx-custom-ee:0.0.4
 ```
 
 ## Test with AWX
